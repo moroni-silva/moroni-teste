@@ -28,5 +28,5 @@ O projeto **Tania – IA do Ponto** tem como objetivo:
 
 ## Público-Alvo
 
-- Colaboradores de todas as unidades que utilizam controle de ponto eletrônico.
-- Equipe de Departamento Pessoal para monitoramento e correção de inconsistências.
+- **Colaboradores**: que utilizam controle de ponto eletrônico.
+- **Equipe de Departamento Pessoal**: para monitoramento e correção de inconsistências.
