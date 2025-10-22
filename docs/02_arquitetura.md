@@ -1,59 +1,44 @@
-# 🏗️ Arquitetura
-EXAMPLE CARTEIRA VENDENDOR
+# 🔄 Fluxo de Dados
+
 ## Sumário
-- [Visão de Componentes](#visão-de-componentes)  
-- [Descrição dos Serviços](#descrição-dos-serviços)  
-- [Diagrama de Componentes](#diagrama-de-componentes)
+- [Sequência de Execução](#sequência-de-execução)
+- [Detalhamento das Etapas](#detalhamento-das-etapas)
+- [Diagrama de Sequência](#diagrama-de-sequência)
 
 ---
 
-## Visão de Componentes
+## Sequência de Execução
 
-A arquitetura distribui-se em camadas:
+### Fluxo de Atendimento
+1. **Recepção de Mensagem**: Colaborador envia mensagem via WhatsApp → captura pelo Webhook.
+2. **Validação**: N8N valida usuário na base autorizada.
+3. **Processamento**: N8N envia consulta para a base de conhecimento.
+4. **Geração de Resposta**: N8N formula resposta baseada nas regras de ponto.
+5. **Envio**: Mensagem formatada retorna ao colaborador via WhatsApp.
+6. **Registro**: N8N salva log da interação no PostgreSQL.
 
-1. **Ingestão**: AWS DMS & scripts → S3 raw  
-2. **Processamento**: AWS Glue / Python → S3 stage/curated  
-3. **Orquestração**: Step Functions & EventBridge  
-4. **Catálogo**: Athena views  
-5. **Consumo**: Power BI dashboards e API Lambda  
+## Detalhamento das Etapas
 
-## Descrição dos Serviços
+### Atendimento
+- **Recepção de Mensagem**: Captura em tempo real via webhook WhatsApp.
+- **Validação**: Verificação de autorização do usuário.
+- **Processamento**: Envio de consulta para a base de conhecimento.
+- **Geração de Resposta**: Resposta clara e objetiva sobre marcações.
+- **Envio**: Mensagem enviada ao colaborador.
+- **Registro**: Log inclui timestamp, usuário, pergunta e resposta.
 
-- **Amazon S3**: armazenamento raw, stage e curated.  
-- **AWS Glue**: transformações ETL em Python.  
-- **AWS Step Functions**: orquestração de pipelines.  
-- **Amazon Athena**: consultas SQL e criação de views.  
-- **AWS Lambda**: enpoint `carteiraVendedorSalvarAtividade`.  
-- **API Gateway**: interface REST para Lambda.  
-- **Power BI**: dashboards de consumo.
-
-## Diagrama de Componentes
-
+## Diagrama de Sequência
 ```mermaid
-flowchart TB
-  subgraph Ingestão
-    DMS["AWS DMS (Dealer/NBS)"]
-  end
-  subgraph Data Lake
-    S3["Amazon S3"] --> Glue["AWS Glue (Python ETL)"] --> Athena["Amazon Athena"]
-  end
-  subgraph Orquestração
-    SF["Step Functions"]
-  end
-  subgraph API
-    APIGW["API Gateway"]-->Lambda["Lambda:SalvarAtividade"]
-  end
-  subgraph BI
-    PB["Power BI"]
-  end
+sequenceDiagram
+participant C as Colaborador
+participant WA as WhatsApp Business
+participant N8N as N8N Workflow
+participant PG as PostgreSQL
 
-  DMS --> S3
-  SF --> Glue
-  Glue --> S3
-  S3 --> Athena
-  Athena --> PB
-  PB --> APIGW
-  APIGW --> Lambda
-  Lambda --> S3
-
+C->>WA: Envia mensagem sobre ponto
+WA->>N8N: Captura mensagem
+N8N->>N8N: Valida usuário autorizado
+N8N->>PG: Busca regras de ponto
+N8N-->>C: Envia resposta sobre pendências
+N8N->>PG: Salva log da interação
 ```
