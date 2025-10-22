@@ -1,49 +1,50 @@
-# 🔄 Fluxo de Dados
-EXAMPLE CARTEIRA VENDENDOR
+# 🏗️ Arquitetura
+
 ## Sumário
-- [Sequência de Execução](#sequência-de-execução)  
-- [Detalhamento das Etapas](#detalhamento-das-etapas)  
-- [Diagrama de Sequência](#diagrama-de-sequência)
+- [Visão de Componentes](#visão-de-componentes)
+- [Descrição dos Serviços](#descrição-dos-serviços)
+- [Diagrama de Componentes](#diagrama-de-componentes)
 
 ---
 
-## Sequência de Execução
+## Visão de Componentes
 
-1. **DMS Replication**: Dealer/NBS → S3 raw  
-2. **Glue ETL**: raw → stage → curated  
-3. **Step Functions**: orquestração e retries  
-4. **Athena CTAS**: criação de views  
-5. **Power BI Refresh**: dashboards atualizados  
-6. **API Lambda**: registro de atividade de vendedor
+A arquitetura da **Tela de Power BI - Leads** é estruturada em camadas:
 
-## Detalhamento das Etapas
+### Camada de Apresentação
+1. **Interface do Usuário**: Tela de Power BI que mostra todos os leads.
+2. **Interatividade**: Filtros e opções de busca para facilitar a navegação.
 
-- **DMS Replication**: configurações de replicação full/incremental.  
-- **Glue ETL**: scripts Python para transformação e enriquecimento.  
-- **Step Functions**: monitoramento e tratamento de erros.  
-- **Athena CTAS**: materializa views em tabelas gerenciadas.  
-- **Power BI Refresh**: executa nos horários agendados.  
-- **API Lambda**: operação síncrona de CRUD de atividades.
+### Camada de Processamento
+1. **Processamento de Dados**: Coleta e transformação de dados de diferentes fontes.
+2. **Análise de Dados**: Geração de relatórios e insights sobre leads.
 
-## Diagrama de Sequência
+### Camada de Armazenamento
+1. **Banco de Dados**: Armazenamento de informações dos leads.
 
-```mermaid 
-sequenceDiagram
-    participant U as Power BI
-    participant APIGW as API Gateway
-    participant L as Lambda
-    participant S3 as Amazon S3
-    participant SF as StepFunctions
-    participant G as Glue
-    participant A as Athena
-    participant PB as PowerBI
+## Descrição dos Serviços
 
-    U->>APIGW: POST /saveComent
-    APIGW->>L: invoke
-    L->>S3: put_object (atividade.csv)
-    Note right of S3: Dados brutos de atividade
-    SF->>G: start ETL
-    G->>S3: write stage/curated
-    A->>PB: Refresh Queries
-    PB-->>U: Exibe dados atualizados
+- **Power BI**: Ferramenta de visualização de dados para análise de leads.
+- **API de Dados**: Integração com diferentes fontes de dados.
+- **Banco de Dados**: Armazenamento e gerenciamento de informações dos leads.
+
+## Diagrama de Componentes
+```mermaid
+graph TB
+subgraph "Camada de Apresentação"
+UI[Tela de Power BI]
+end
+
+subgraph "Camada de Processamento"
+API[API de Dados]
+PD[Processamento de Dados]
+end
+
+subgraph "Camada de Armazenamento"
+DB[Banco de Dados]
+end
+
+UI --> API
+API --> PD
+PD --> DB
 ```
