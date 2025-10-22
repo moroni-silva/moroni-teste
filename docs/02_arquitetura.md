@@ -9,36 +9,47 @@
 
 ## Sequência de Execução
 
-### Fluxo de Atendimento
-1. **Recepção de Mensagem**: Colaborador envia mensagem via WhatsApp → captura pelo Webhook.
-2. **Validação**: N8N valida usuário na base autorizada.
-3. **Processamento**: N8N envia consulta para a base de conhecimento.
-4. **Geração de Resposta**: N8N formula resposta baseada nas regras de ponto.
-5. **Envio**: Mensagem formatada retorna ao colaborador via WhatsApp.
-6. **Registro**: N8N salva log da interação no PostgreSQL.
+### Fluxo de Apresentação de Leads
+1. **Coleta de Dados**: Dados dos leads são coletados de diferentes fontes.
+2. **Processamento de Dados**: Os dados são transformados e organizados para visualização.
+3. **Apresentação**: Os dados processados são exibidos na tela do Power BI.
+4. **Interação do Usuário**: O usuário pode aplicar filtros e buscar leads específicos.
+5. **Atualização de Dados**: A interface é atualizada em tempo real com novos dados.
+
+### Fluxo de Análise
+1. **Geração de Relatórios**: O sistema gera relatórios com base nos dados apresentados.
+2. **Insights**: Análises são realizadas para fornecer insights sobre o desempenho dos leads.
+3. **Exportação**: Os usuários podem exportar dados e relatórios para uso externo.
 
 ## Detalhamento das Etapas
 
-### Atendimento
-- **Recepção de Mensagem**: Captura em tempo real via webhook WhatsApp.
-- **Validação**: Verificação de autorização do usuário.
-- **Processamento**: Envio de consulta para a base de conhecimento.
-- **Geração de Resposta**: Resposta clara e objetiva sobre marcações.
-- **Envio**: Mensagem enviada ao colaborador.
-- **Registro**: Log inclui timestamp, usuário, pergunta e resposta.
+### Apresentação de Leads
+- **Coleta de Dados**: Integração com APIs e bancos de dados para coletar informações dos leads.
+- **Processamento de Dados**: Transformação dos dados em um formato adequado para visualização no Power BI.
+- **Apresentação**: Interface do Power BI exibe os dados de forma clara e interativa.
+- **Interação do Usuário**: Usuários podem filtrar e buscar leads conforme necessário.
+- **Atualização de Dados**: A interface é atualizada automaticamente com novos dados.
+
+### Análise
+- **Geração de Relatórios**: Relatórios são gerados automaticamente com base nos dados apresentados.
+- **Insights**: Análises são realizadas para identificar tendências e padrões nos leads.
+- **Exportação**: Opção para exportar dados e relatórios em formatos como CSV ou PDF.
 
 ## Diagrama de Sequência
+
 ```mermaid
 sequenceDiagram
-participant C as Colaborador
-participant WA as WhatsApp Business
-participant N8N as N8N Workflow
-participant PG as PostgreSQL
+participant U as Usuário
+participant UI as Tela de Power BI
+participant API as API de Dados
+participant DB as Banco de Dados
 
-C->>WA: Envia mensagem sobre ponto
-WA->>N8N: Captura mensagem
-N8N->>N8N: Valida usuário autorizado
-N8N->>PG: Busca regras de ponto
-N8N-->>C: Envia resposta sobre pendências
-N8N->>PG: Salva log da interação
+U->>UI: Solicita visualização de leads
+UI->>API: Coleta dados dos leads
+API->>DB: Acessa informações dos leads
+DB-->>API: Retorna dados dos leads
+API-->>UI: Envia dados processados
+UI-->>U: Exibe leads na tela
+U->>UI: Aplica filtros e busca
+UI-->>API: Atualiza visualização
 ```
