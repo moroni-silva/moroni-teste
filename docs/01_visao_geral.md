@@ -9,24 +9,23 @@
 
 ## Objetivos
 
-O projeto **Tania – IA do Ponto** tem como objetivo:
+O projeto **Tela de Power BI - Leads** tem como objetivo:
 
-1. Monitorar diariamente as marcações de ponto dos colaboradores.
-2. Identificar marcações incompletas (menos de 4 registros obrigatórios em dias úteis).
-3. Enviar notificações automáticas sobre pendências ou erros.
-4. Esclarecer dúvidas sobre regras de ponto via atendimento automatizado.
-5. Registrar alertas e ocorrências para acompanhamento pelo Departamento Pessoal.
+1. Apresentar uma interface visual que mostre todos os leads da empresa de forma clara e organizada.
+2. Facilitar a análise de dados dos leads, permitindo que a equipe tome decisões informadas.
+3. Integrar dados de diferentes fontes para uma visão unificada dos leads.
+4. Proporcionar relatórios e insights sobre o desempenho dos leads ao longo do tempo.
 
 ## Escopo
 
-### Funcionalidades
-- Mensagens automáticas no WhatsApp em caso de pendências de ponto.
-- Respostas automáticas para dúvidas frequentes sobre marcações, regras e fechamento.
-- Registro de logs de notificações e interações para auditoria.
-- Relatórios de ocorrências por colaborador, unidade e período.
-- Notificação preventiva em caso de inconsistências recorrentes.
+### Funcionalidades Principais
+- Exibição de todos os leads da empresa em uma interface de fácil navegação.
+- Filtros e opções de busca para facilitar a localização de leads específicos.
+- Gráficos e visualizações para análise de desempenho dos leads.
+- Exportação de dados para relatórios.
 
 ## Público-Alvo
 
-- **Colaboradores**: que utilizam controle de ponto eletrônico.
-- **Equipe de Departamento Pessoal**: para monitoramento e correção de inconsistências.
+- **Equipe de Vendas**: para monitorar e analisar leads.
+- **Gestores**: para tomar decisões estratégicas baseadas em dados.
+- **Analistas de Dados**: para realizar análises mais profundas sobre o desempenho dos leads.
