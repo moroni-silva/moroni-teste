@@ -11,21 +11,18 @@
 
 O projeto **Tela de Power BI - Leads** tem como objetivo:
 
-1. Apresentar uma interface visual que mostre todos os leads da empresa de forma clara e organizada.
-2. Facilitar a análise de dados dos leads, permitindo que a equipe tome decisões informadas.
-3. Integrar dados de diferentes fontes para uma visão unificada dos leads.
-4. Proporcionar relatórios e insights sobre o desempenho dos leads ao longo do tempo.
+1. Exibir de forma visual e interativa os leads da empresa.
+2. Facilitar a análise e acompanhamento do desempenho dos leads.
+3. Proporcionar insights para a equipe de vendas e marketing.
 
 ## Escopo
 
-### Funcionalidades Principais
-- Exibição de todos os leads da empresa em uma interface de fácil navegação.
-- Filtros e opções de busca para facilitar a localização de leads específicos.
-- Gráficos e visualizações para análise de desempenho dos leads.
-- Exportação de dados para relatórios.
+### Funcionalidades
+- Dashboard interativo com gráficos e tabelas sobre os leads.
+- Filtros para segmentar os leads por diferentes critérios.
+- Atualização em tempo real dos dados apresentados.
 
 ## Público-Alvo
 
-- **Equipe de Vendas**: para monitorar e analisar leads.
-- **Gestores**: para tomar decisões estratégicas baseadas em dados.
-- **Analistas de Dados**: para realizar análises mais profundas sobre o desempenho dos leads.
+- **Equipe de Vendas**: para acompanhamento e análise dos leads.
+- **Equipe de Marketing**: para entender o desempenho das campanhas e geração de leads.
