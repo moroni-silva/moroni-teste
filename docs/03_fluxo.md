@@ -9,42 +9,38 @@
 
 ## Visão de Componentes
 
-A arquitetura da **Tela de Power BI - Leads** é estruturada em camadas:
+A arquitetura do projeto **Power BI Leads** distribui-se em camadas:
 
 ### Camada de Apresentação
-1. **Interface do Usuário**: Tela de Power BI que mostra todos os leads.
-2. **Interatividade**: Filtros e opções de busca para facilitar a navegação.
+1. **Interface do Usuário**: Tela de apresentação dos leads.
 
 ### Camada de Processamento
-1. **Processamento de Dados**: Coleta e transformação de dados de diferentes fontes.
-2. **Análise de Dados**: Geração de relatórios e insights sobre leads.
+2. **Processamento de Dados**: Coleta e processamento dos dados dos leads.
 
 ### Camada de Armazenamento
-1. **Banco de Dados**: Armazenamento de informações dos leads.
+3. **Banco de Dados**: Armazenamento das informações dos leads.
 
 ## Descrição dos Serviços
 
-- **Power BI**: Ferramenta de visualização de dados para análise de leads.
-- **API de Dados**: Integração com diferentes fontes de dados.
-- **Banco de Dados**: Armazenamento e gerenciamento de informações dos leads.
+- **Interface do Usuário**: Apresenta os leads de forma visual e interativa.
+- **Processamento de Dados**: Realiza a extração e transformação dos dados dos leads.
+- **Banco de Dados**: Armazena informações sobre os leads e suas interações.
 
 ## Diagrama de Componentes
 ```mermaid
 graph TB
-subgraph "Camada de Apresentação"
-UI[Tela de Power BI]
+subgraph "Apresentação"
+UI[Interface do Usuário]
 end
 
-subgraph "Camada de Processamento"
-API[API de Dados]
+subgraph "Processamento"
 PD[Processamento de Dados]
 end
 
-subgraph "Camada de Armazenamento"
+subgraph "Armazenamento"
 DB[Banco de Dados]
 end
 
-UI --> API
-API --> PD
+UI --> PD
 PD --> DB
 ```
