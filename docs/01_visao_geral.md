@@ -9,21 +9,20 @@
 
 ## Objetivos
 
-O projeto **[Nome do Projeto]** tem como objetivo:
+O projeto tem como objetivo:
 
-1. Mostrar a quantidade de taxas que foram obtidas nos últimos dias.
-2. Fornecer uma visão clara e rápida sobre as métricas de desempenho.
-3. Ajudar na tomada de decisões com base nas taxas coletadas.
+1. Fornecer relatórios e dashboards interativos para análise de dados.
+2. Facilitar a visualização e interpretação de informações críticas para a tomada de decisão.
+3. Automatizar a geração de relatórios periódicos e insights baseados em dados.
 
 ## Escopo
 
 ### Funcionalidades Principais
-- Exibir a quantidade de taxas em um gráfico interativo.
-- Permitir a filtragem por período (últimos dias, semanas, etc.).
-- Exportar dados para relatórios.
+- Criação de dashboards dinâmicos e interativos.
+- Integração com fontes de dados diversas.
+- Relatórios personalizáveis conforme as necessidades dos usuários.
 
 ## Público-Alvo
-- **Gestores e Diretores**: para análise de desempenho.
-- **Equipe de Dados**: para suporte na coleta e análise de dados.
-
----
+- **Gestores e Diretores**: para visualização de KPIs e métricas de desempenho.
+- **Equipe de Dados**: para análise e interpretação de dados.
+- **Usuários Finais**: para acesso a relatórios e insights.
