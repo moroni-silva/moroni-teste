@@ -1,47 +1,43 @@
-# 🤖 Introdução a ML & IA
+# Exemplo de Workflow: Publicação de Anúncios
 
-## Visão Geral do Projeto
+---
 
-Descreva aqui o propósito geral da solução de Machine Learning ou IA neste projeto. Qual problema de negócio estamos resolvendo? Quais são os principais objetivos e os resultados esperados?
+## Objetivo do Fluxo
 
-**Exemplo:**
-*O objetivo deste projeto é desenvolver um modelo de recomendação para a "Carteira do Vendedor", visando aumentar o cross-sell de produtos em 15% até o final do Q4.*
+O workflow `Publicação_Anúncios` é acionado por um webhook, escuta os anúncios, mapeia as variáveis e envia uma mensagem ao cliente utilizando um template da Meta.
 
-## Stakeholders
+## Estrutura do Workflow
 
-Liste as principais partes interessadas no projeto e seus papéis.
+1. **Webhook (Trigger):**
+   - **Nome do Nó:** "Recebe Anúncio via Webhook"
+   - **Descrição:** Ponto de entrada para novos anúncios.
 
-| Nome | Área | Papel no Projeto |
-| :--- | :--- | :--- |
-| [Nome do Stakeholder] | [Ex: Vendas, Marketing] | [Ex: Product Owner, Sponsor] |
-| [Nome do Stakeholder] | [Ex: Dados] | [Ex: Tech Lead] |
+2. **Set:**
+   - **Nome do Nó:** "Define Variáveis do Anúncio"
+   - **Descrição:** Extrai e formata os dados do anúncio para uso nos passos seguintes.
 
-## Tecnologias Utilizadas
+3. **HTTP Request:**
+   - **Nome do Nó:** "Envia Mensagem ao Cliente"
+   - **Descrição:** Faz uma chamada para a API da Meta para enviar o template ao número do cliente.
+   - **Credencial Usada:** Credenciais configuradas para a API Meta.
 
-Liste as principais tecnologias, frameworks e bibliotecas usadas nesta solução.
+## Tratamento de Erro
 
-- **Orquestração:** [Ex: n8n, Airflow]
-- **Linguagem:** [Ex: Python 3.9]
-- **Principais Bibliotecas:** [Ex: Scikit-learn, Pandas, TensorFlow]
-- **Plataforma:** [Ex: AWS SageMaker, Databricks]
+- Um nó `Error Trigger` está configurado para capturar qualquer falha no fluxo.
+- Em caso de erro, uma notificação é enviada para a equipe responsável.
 
+## Diagrama de Sequência do Workflow: Publicação de Anúncios
 
-## Acesso ao Ambiente
+```mermaid
+sequenceDiagram
+    participant C as Cliente
+    participant W as Webhook
+    participant N as N8N Workflow
+    participant M as Meta API
 
-Forneça as informações de acesso aos ambientes do n8n.
-
-- **Ambiente de Desenvolvimento:** `https://doit.software/hire-n8n-developer`
-- **Ambiente de Produção:** `https://www.reddit.com/r/n8n/comments/1j2efiw/thoughts_on_using_n8n_for_production/`
-
-!!! warning "Credenciais"
-    As credenciais de acesso devem ser gerenciadas através do [Nome da Ferramenta de Segredos, ex: AWS Secrets Manager] e nunca devem ser expostas diretamente nos workflows.
-
-# Referência n8n
-
-Este diretório contém links e referências para a documentação do n8n utilizada no projeto.
-
-- [Documentação oficial do n8n](https://docs.n8n.io/)
-- Guias internos e exemplos de uso
-- Convenções adotadas no projeto
-
-Utilize este espaço para centralizar informações úteis sobre automações n8n.
+    C->>W: Envia anúncio
+    W->>N: Dispara webhook com dados do anúncio
+    N->>N: Define variáveis do anúncio
+    N->>M: Envia template ao cliente
+    M->>C: Entrega mensagem ao cliente
+```
