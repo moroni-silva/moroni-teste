@@ -9,36 +9,38 @@
 
 ## Sequência de Execução
 
-### Fluxo de Atendimento
-1. **Recepção de Mensagem**: Colaborador envia mensagem via WhatsApp → captura pelo Webhook.
-2. **Validação**: N8N valida usuário na base autorizada.
-3. **Processamento**: N8N envia consulta para a base de conhecimento.
-4. **Geração de Resposta**: N8N formula resposta baseada nas regras de ponto.
-5. **Envio**: Mensagem formatada retorna ao colaborador via WhatsApp.
-6. **Registro**: N8N salva log da interação no PostgreSQL.
+### Fluxo de Coleta de Taxas
+1. **Coleta de Dados**: O sistema coleta dados de taxas diariamente.
+2. **Processamento**: Os dados coletados são processados para análise.
+3. **Exibição**: Os resultados são exibidos na interface do usuário.
+
+### Fluxo de Exportação de Dados
+1. **Seleção de Período**: O usuário seleciona o período desejado.
+2. **Geração de Relatório**: O sistema gera um relatório com os dados filtrados.
+3. **Download**: O usuário pode baixar o relatório gerado.
 
 ## Detalhamento das Etapas
 
-### Atendimento
-- **Recepção de Mensagem**: Captura em tempo real via webhook WhatsApp.
-- **Validação**: Verificação de autorização do usuário.
-- **Processamento**: Envio de consulta para a base de conhecimento.
-- **Geração de Resposta**: Resposta clara e objetiva sobre marcações.
-- **Envio**: Mensagem enviada ao colaborador.
-- **Registro**: Log inclui timestamp, usuário, pergunta e resposta.
+### Coleta de Dados
+- **Fonte de Dados**: [Descrever a fonte de dados, ex: API, Banco de Dados, etc.]
+- **Frequência**: Dados coletados diariamente.
+
+### Processamento
+- **Métodos Utilizados**: [Descrever os métodos de processamento, ex: cálculos, agregações, etc.]
+
+### Exibição
+- **Interface**: Tela que mostra as taxas coletadas com gráficos interativos.
 
 ## Diagrama de Sequência
+
 ```mermaid
 sequenceDiagram
-participant C as Colaborador
-participant WA as WhatsApp Business
-participant N8N as N8N Workflow
-participant PG as PostgreSQL
+    participant U as Usuário
+    participant S as Sistema
+    participant DB as Banco de Dados
 
-C->>WA: Envia mensagem sobre ponto
-WA->>N8N: Captura mensagem
-N8N->>N8N: Valida usuário autorizado
-N8N->>PG: Busca regras de ponto
-N8N-->>C: Envia resposta sobre pendências
-N8N->>PG: Salva log da interação
+    U->>S: Solicita dados das taxas
+    S->>DB: Coleta dados
+    DB-->>S: Retorna dados
+    S-->>U: Exibe dados na tela
 ```
