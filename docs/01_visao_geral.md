@@ -1,4 +1,4 @@
-📖 Visão Geral
+# 📖 Visão Geral
 
 ## Sumário
 - [Objetivos](#objetivos)
@@ -9,20 +9,21 @@
 
 ## Objetivos
 
-O projeto **Tela de Fósseis** tem como objetivo:
+O projeto **Tela de Fósseis do Mundo** tem como objetivo:
 
-1. Mostrar a localização dos maiores fósseis do mundo.
-2. Fornecer informações detalhadas sobre cada fóssil, incluindo dados históricos e geográficos.
-3. Facilitar a visualização e o acesso a informações sobre fósseis para pesquisadores e entusiastas.
+1. Apresentar informações sobre os maiores fósseis do mundo de forma interativa.
+2. Fornecer dados sobre a localização, tamanho e características dos fósseis.
+3. Permitir que os usuários explorem diferentes fósseis através de uma interface amigável.
 
 ## Escopo
 
 ### Funcionalidades Principais
-- Exibição de um mapa interativo com a localização dos fósseis.
-- Informações detalhadas sobre cada fóssil ao clicar em sua localização no mapa.
-- Filtros para categorizar fósseis por tipo, idade e localização geográfica.
+- Exibição de fósseis em um mapa interativo.
+- Informações detalhadas sobre cada fóssil ao clicar sobre eles.
+- Filtros para visualizar fósseis por categoria, tamanho e localização.
 
-### Público-Alvo
-- Pesquisadores e acadêmicos na área de paleontologia.
-- Estudantes e entusiastas da ciência.
-- O público em geral interessado em fósseis e história natural.
+## Público-Alvo
+
+- **Estudantes e Pesquisadores**: interessados em paleontologia e ciências naturais.
+- **Turistas**: que desejam explorar locais de interesse relacionados a fósseis.
+- **Educadores**: que buscam recursos interativos para ensinar sobre fósseis e sua importância.
