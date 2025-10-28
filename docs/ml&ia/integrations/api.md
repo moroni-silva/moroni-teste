@@ -1,15 +1,23 @@
+API: Facebook Marketing API
 
+- **Endpoint Base:** `https://graph.facebook.com/v12.0/`
+- **Documentação Oficial:** [Facebook Marketing API Docs](https://developers.facebook.com/docs/marketing-apis)
+- **Método de Autenticação:** OAuth 2.0
+- **Credenciais:** As credenciais para esta API estão armazenadas no sistema de gerenciamento de credenciais.
+  
+### Endpoints Utilizados:
+- **POST /{ad_account_id}/ads:** Criação de novos anúncios.
+- **GET /{ad_account_id}/ads:** Consulta de anúncios existentes.
+- **GET /{ad_id}/insights:** Coleta de dados de desempenho dos anúncios.
 
-# Integrações via API
+---
 
-Esta seção detalha as integrações com APIs externas (terceiros) ou internas.
+## API: Google Analytics (Opcional)
 
-## API: [Nome da API]
+- **Endpoint Base:** `https://analytics.googleapis.com/v4/`
+- **Documentação Oficial:** [Google Analytics API Docs](https://developers.google.com/analytics/devguides/reporting/core/v4)
+- **Método de Autenticação:** OAuth 2.0
+- **Credenciais:** As credenciais para esta API estão armazenadas no sistema de gerenciamento de credenciais.
 
-- **Endpoint Base:** `https://base.com/pt-BR/ajuda/knowledgebase/token-api-como-gerar/`
-- **Documentação Oficial:** [Link para a documentação da API]
-- **Método de Autenticação:** [Ex: OAuth 2.0, API Key, Bearer Token]
-- **Credenciais:** As credenciais para esta API estão armazenadas no n8n sob o nome `[Nome da Credencial no n8n]`.
-- **Endpoints Utilizados:**
-  - `GET /endpoint1`: [Breve descrição do que este endpoint faz].
-  - `POST /endpoint2`: [Breve descrição do que este endpoint faz].
+### Endpoints Utilizados:
+- **GET /v4/reports:** Geração de relatórios de desempenho de campanhas publicitárias.
