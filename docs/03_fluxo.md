@@ -1,4 +1,4 @@
-# 🏗️ Arquitetura
+### 🏗️ Arquitetura
 
 ## Sumário
 - [Visão de Componentes](#visão-de-componentes)
@@ -9,38 +9,42 @@
 
 ## Visão de Componentes
 
-A arquitetura do projeto **Power BI Leads** distribui-se em camadas:
+A arquitetura da **IA de Publicação de Anúncios no Facebook** distribui-se em camadas:
 
-### Camada de Apresentação
-1. **Interface do Usuário**: Tela de apresentação dos leads.
+### Fluxo de Publicação
+1. **Recepção**: Interface para entrada de dados do usuário (ex: parâmetros do anúncio).
+2. **Processamento**: Lógica da IA que gera o conteúdo do anúncio.
+3. **Integração com API**: Conexão com a API do Facebook para publicar anúncios.
+4. **Armazenamento**: Registro de anúncios publicados e desempenho em banco de dados.
 
-### Camada de Processamento
-2. **Processamento de Dados**: Coleta e processamento dos dados dos leads.
-
-### Camada de Armazenamento
-3. **Banco de Dados**: Armazenamento das informações dos leads.
+### Monitoramento
+5. **Coleta de Dados**: Monitoramento do desempenho dos anúncios.
+6. **Análise de Resultados**: Relatórios e insights sobre a eficácia das campanhas.
 
 ## Descrição dos Serviços
 
-- **Interface do Usuário**: Apresenta os leads de forma visual e interativa.
-- **Processamento de Dados**: Realiza a extração e transformação dos dados dos leads.
-- **Banco de Dados**: Armazena informações sobre os leads e suas interações.
+- **API do Facebook**: Gerenciamento de anúncios, criação de campanhas e análise de desempenho.
+- **Banco de Dados**: Armazenamento de informações sobre anúncios e resultados.
+- **Interface de Usuário**: Local onde os usuários podem inserir dados e visualizar resultados.
 
 ## Diagrama de Componentes
 ```mermaid
 graph TB
-subgraph "Apresentação"
-UI[Interface do Usuário]
+subgraph "Fluxo de Publicação"
+    UI[Interface do Usuário]
+    PROCESS[Processamento da IA]
+    API[API do Facebook]
+    DB[Banco de Dados]
 end
 
-subgraph "Processamento"
-PD[Processamento de Dados]
+subgraph "Monitoramento"
+    COLETA[Coleta de Dados]
+    ANALISE[Análise de Resultados]
 end
 
-subgraph "Armazenamento"
-DB[Banco de Dados]
-end
-
-UI --> PD
-PD --> DB
+UI --> PROCESS
+PROCESS --> API
+API --> DB
+DB --> COLETA
+COLETA --> ANALISE
 ```
