@@ -9,20 +9,21 @@
 
 ## Objetivos
 
-O projeto **Tela de Power BI - Leads** tem como objetivo:
+O projeto **IA de Publicação de Anúncios no Facebook** tem como objetivo:
 
-1. Exibir de forma visual e interativa os leads da empresa.
-2. Facilitar a análise e acompanhamento do desempenho dos leads.
-3. Proporcionar insights para a equipe de vendas e marketing.
+1. Automatizar a criação e publicação de anúncios no Facebook.
+2. Integrar com a API do Facebook para gerenciamento de campanhas.
+3. Garantir a conformidade com as diretrizes de anúncios do Facebook.
+4. Monitorar o desempenho dos anúncios e otimizar as campanhas.
 
 ## Escopo
 
-### Funcionalidades
-- Dashboard interativo com gráficos e tabelas sobre os leads.
-- Filtros para segmentar os leads por diferentes critérios.
-- Atualização em tempo real dos dados apresentados.
+### Funcionalidades Principais
+- **Publicação Automatizada**: A IA irá criar e publicar anúncios com base em parâmetros definidos.
+- **Integração com API do Facebook**: Conexão com a API para gerenciar anúncios e campanhas.
+- **Análise de Desempenho**: Coleta de dados sobre o desempenho dos anúncios para otimização.
 
 ## Público-Alvo
 
-- **Equipe de Vendas**: para acompanhamento e análise dos leads.
-- **Equipe de Marketing**: para entender o desempenho das campanhas e geração de leads.
+- **Profissionais de Marketing**: Usuários que desejam automatizar suas campanhas publicitárias.
+- **Empresas**: Negócios que buscam aumentar sua presença online através de anúncios no Facebook.
