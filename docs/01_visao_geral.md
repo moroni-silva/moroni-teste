@@ -9,21 +9,21 @@
 
 ## Objetivos
 
-O projeto **Tela de Fósseis do Mundo** tem como objetivo:
+O projeto **Script de Opt-out** tem como objetivo:
 
-1. Apresentar informações sobre os maiores fósseis do mundo de forma interativa.
-2. Fornecer dados sobre a localização, tamanho e características dos fósseis.
-3. Permitir que os usuários explorem diferentes fósseis através de uma interface amigável.
+1. Coletar e gerenciar informações sobre opt-outs de clientes da empresa.
+2. Garantir que os dados de opt-out sejam atualizados e tratados de forma eficaz.
+3. Facilitar a conformidade com as regulamentações de privacidade e proteção de dados.
 
 ## Escopo
 
-### Funcionalidades Principais
-- Exibição de fósseis em um mapa interativo.
-- Informações detalhadas sobre cada fóssil ao clicar sobre eles.
-- Filtros para visualizar fósseis por categoria, tamanho e localização.
+O script será responsável por:
+- Extração de dados de opt-out de diferentes fontes.
+- Processamento e limpeza dos dados coletados.
+- Armazenamento em um formato acessível para análise e relatórios.
 
 ## Público-Alvo
 
-- **Estudantes e Pesquisadores**: interessados em paleontologia e ciências naturais.
-- **Turistas**: que desejam explorar locais de interesse relacionados a fósseis.
-- **Educadores**: que buscam recursos interativos para ensinar sobre fósseis e sua importância.
+- **Equipe de Dados**: para análise e relatórios sobre opt-outs.
+- **Departamento de Compliance**: para garantir conformidade com as regulamentações.
+- **Gestores**: para monitorar a eficácia das campanhas de opt-out.
