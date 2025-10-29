@@ -8,21 +8,26 @@
 ---
 
 ## Visão de Componentes
-A arquitetura do **[Nome do Projeto]** distribui-se em camadas:
 
-### Componentes Principais
-1. **Interface do Usuário**: Tela que exibe as taxas coletadas.
-2. **Serviço de Backend**: Processa e fornece os dados das taxas.
-3. **Banco de Dados**: Armazena as informações sobre as taxas.
+A arquitetura da **IA de Prospecção** distribui-se em camadas:
+
+### Camadas do Sistema
+1. **Coleta de Dados**: Integração com APIs e bancos de dados para coleta de informações de leads.
+2. **Processamento**: Algoritmos de machine learning para análise e qualificação de leads.
+3. **Interação**: Interface de comunicação com potenciais clientes via e-mail ou mensagens.
+4. **Armazenamento**: Banco de dados para armazenamento de leads e histórico de interações.
 
 ## Descrição dos Serviços
-- **Frontend**: Desenvolvido em [tecnologia utilizada, ex: React, Angular, etc.], responsável pela interação do usuário.
-- **API**: [Descrição da API utilizada, se houver].
-- **Banco de Dados**: [Tipo de banco de dados, ex: PostgreSQL, MySQL, etc.].
+
+- **APIs de Coleta**: Conexão com fontes de dados externas para obter informações relevantes.
+- **Machine Learning**: Modelos que analisam dados e identificam leads qualificados.
+- **Interface de Comunicação**: Sistema que permite a interação com os leads através de múltiplos canais.
 
 ## Diagrama de Componentes
 ```mermaid
-graph TB
-    UI[Interface do Usuário] --> API[Serviço de Backend]
-    API --> DB[Banco de Dados]
+graph TD
+    A[API de Coleta] --> B[Processamento de Dados]
+    B --> C[Machine Learning]
+    C --> D[Interface de Comunicação]
+    D --> E[Banco de Dados]
 ```
