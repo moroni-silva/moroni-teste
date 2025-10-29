@@ -9,21 +9,22 @@
 
 ## Objetivos
 
-O projeto **Script de Opt-out** tem como objetivo:
+O projeto **Lambda Opt-Out** tem como objetivo:
 
-1. Coletar e gerenciar informações sobre opt-outs de clientes da empresa.
-2. Garantir que os dados de opt-out sejam atualizados e tratados de forma eficaz.
-3. Facilitar a conformidade com as regulamentações de privacidade e proteção de dados.
+1. Implementar um script Lambda que automatiza o processo de opt-out, permitindo que os usuários possam se descadastrar de comunicações de forma eficiente.
+2. Garantir a conformidade com as regulamentações de privacidade e proteção de dados.
+3. Facilitar a gestão de listas de contatos, removendo usuários que optarem por não receber mais comunicações.
 
 ## Escopo
 
-O script será responsável por:
-- Extração de dados de opt-out de diferentes fontes.
-- Processamento e limpeza dos dados coletados.
-- Armazenamento em um formato acessível para análise e relatórios.
+### Funcionalidades
+- **Automação de Opt-Out**: O script Lambda será acionado por eventos específicos, permitindo a remoção automática de usuários de listas de comunicação.
+- **Registro de Ações**: Todas as ações de opt-out serão registradas para fins de auditoria e conformidade.
+
+### Limitações
+- O projeto não inclui a implementação de interfaces de usuário, focando apenas na automação do backend.
 
 ## Público-Alvo
 
-- **Equipe de Dados**: para análise e relatórios sobre opt-outs.
-- **Departamento de Compliance**: para garantir conformidade com as regulamentações.
-- **Gestores**: para monitorar a eficácia das campanhas de opt-out.
+- **Gestores de Marketing**: Para garantir que as listas de contatos estejam atualizadas e em conformidade.
+- **Equipes de Compliance**: Para monitorar e auditar as solicitações de opt-out.
