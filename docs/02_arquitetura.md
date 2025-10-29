@@ -8,39 +8,28 @@
 ---
 
 ## Sequência de Execução
-
-### Fluxo de Coleta de Taxas
-1. **Coleta de Dados**: O sistema coleta dados de taxas diariamente.
-2. **Processamento**: Os dados coletados são processados para análise.
-3. **Exibição**: Os resultados são exibidos na interface do usuário.
-
-### Fluxo de Exportação de Dados
-1. **Seleção de Período**: O usuário seleciona o período desejado.
-2. **Geração de Relatório**: O sistema gera um relatório com os dados filtrados.
-3. **Download**: O usuário pode baixar o relatório gerado.
+1. **Coleta de Dados**: A IA coleta informações de leads através de APIs.
+2. **Análise de Dados**: Os dados coletados são processados por algoritmos de machine learning.
+3. **Qualificação de Leads**: A IA classifica os leads com base em critérios definidos.
+4. **Interação**: A IA interage com os leads qualificados através de e-mail ou mensagens.
+5. **Armazenamento**: Os dados e interações são armazenados em um banco de dados.
 
 ## Detalhamento das Etapas
-
-### Coleta de Dados
-- **Fonte de Dados**: [Descrever a fonte de dados, ex: API, Banco de Dados, etc.]
-- **Frequência**: Dados coletados diariamente.
-
-### Processamento
-- **Métodos Utilizados**: [Descrever os métodos de processamento, ex: cálculos, agregações, etc.]
-
-### Exibição
-- **Interface**: Tela que mostra as taxas coletadas com gráficos interativos.
+- **Coleta de Dados**: Integração com APIs para obter informações de leads.
+- **Análise de Dados**: Processamento dos dados utilizando modelos de machine learning.
+- **Qualificação de Leads**: Identificação de leads com maior potencial de conversão.
+- **Interação**: Envio de mensagens automáticas para leads qualificados.
+- **Armazenamento**: Registro de todas as interações e dados em um banco de dados.
 
 ## Diagrama de Sequência
-
 ```mermaid
 sequenceDiagram
-    participant U as Usuário
-    participant S as Sistema
+    participant API as API de Coleta
+    participant ML as Machine Learning
+    participant INTER as Interface de Comunicação
     participant DB as Banco de Dados
 
-    U->>S: Solicita dados das taxas
-    S->>DB: Coleta dados
-    DB-->>S: Retorna dados
-    S-->>U: Exibe dados na tela
+    API->>ML: Coleta de Dados
+    ML->>INTER: Qualificação de Leads
+    INTER->>DB: Armazenamento de Interações
 ```
